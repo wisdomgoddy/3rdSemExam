@@ -1,0 +1,11 @@
+.terraform
+.terraform*
+.terraform/**
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.tfplan
+.terraform**
+.terraformrc
+terraformrc*.tfvars
+.tfstate.terraform.tfsate.d
+azurek8s
