@@ -77,10 +77,11 @@ Using namecheap.com, we update our domain name *(wisdomgoddy.me)* to point to th
 ![namecheapdns](./images/08_namecheapdns.png)
 
 **STEP 6**
-In this step all we need to do is view our application that's mapped to the dommain name on our web browser.The application's frontend is good to go and successfully mapped to our domain name but you'd also note that the connection is insecure.
+In this step all we need to do is view our application that's mapped to the dommain name on our web browser.
 
 ![sockshopinsecure](./images/10_sockshopinsecure.png)
 
+The application's frontend is good to go and successfully mapped to our domain name but you'd also note that the connection is insecure.
 
 **STEP 7**
 
