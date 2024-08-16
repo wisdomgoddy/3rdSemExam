@@ -41,6 +41,10 @@ Once we've applied our terraform and all required resources have been added, we 
 
 ![kubectlcheck](./images/02_namespacecheck.png)
 
+We can also confirm from our Azure portal to check that the kubernetes service is up and running.
+
+![k8sservice](./images/)
+
 **STEP 3**
 
 We were given this link *https://github.com/microservices-demo/microservices-demo/tree/master* to provision the sockshop microservice application and we'd use the yaml file deploy.
