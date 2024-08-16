@@ -47,7 +47,7 @@ We can also confirm from our Azure portal to check that the kubernetes service i
 
 **STEP 3**
 
-We were given this link *https://github.com/microservices-demo/microservices-demo/tree/master* to provision the sockshop microservice application and we'd use the yaml file deploy.
+We were given this link *https://github.com/microservices-demo/microservices-demo/tree/master* to provision the sockshop microservice application and we'd use the yaml file to deploy.
 
 ![kubectlsockshop](./images/03_kubectlsockshop.png)
 
@@ -76,11 +76,13 @@ You should also note that the ingess has an External I.P 40.78.82.178 which can 
 We do not intend to view our application via i.p address as that's not a best practice so we'd be mapping this same external ip created by ingress to our designated domain name.
 
 **STEP 5**
-Using namecheap.com, we update our domain name *(wisdomgoddy.me)* to point to the ip gotten from nginx-ingress so that our application can be accessible through the domain name we mapped the external ip.
+
+Using *htttps://namecheap.com* as our domain host, we update our domain name *(wisdomgoddy.me)* to point to the ip gotten from nginx-ingress so that our application can be accessible through the domain name we mapped the external ip.
 
 ![namecheapdns](./images/08_namecheapdns.png)
 
 **STEP 6**
+
 In this step all we need to do is view our application that's mapped to the dommain name on our web browser.
 
 ![sockshopinsecure](./images/10_sockshopinsecure.png)
