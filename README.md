@@ -17,10 +17,10 @@ To successfully complete this project, the following tools and services are requ
 - Helm : For managing Kubernetes applications as Helm charts.
 Socks Shop Application : The microservices-based e-commerce platform being deployed.
 
-> Infrastructure Provisioning
+>  For Infrastructure provisioning
 Using Terraform, we will provision the necessary infrastructure resources on Azure. This approach ensures a clear and reproducible infrastructure setup.
 
-### SetUp and Initialization
+### SETUP AND INITIALIZATION
  **STEP 1**
 
  The goal is to initialzile, plan and apply terraform in your working directory having configured all the necessary *.tf* files required for the provisioning the necessary resources and Kubernetes cluster on Azure. 
@@ -33,7 +33,7 @@ You run the following commands to initialize and set up Kubernertes cluster on A
 
 `terraform apply main.tf.plan`
 
-![k8setup](.\images\01_terraformapply.png)
+![k8setup](./images/01_terraformapply.png)
 
 **STEP 2**
 
@@ -43,7 +43,7 @@ Once we've applied our terraform and all required resources have been added, we 
 
 We can also confirm from our Azure portal to check that the kubernetes service is up and running.
 
-![k8sservice](./images/)
+![k8sservice](./images/011kubernetes.png)
 
 **STEP 3**
 
