@@ -87,9 +87,76 @@ In this step all we need to do is view our application that's mapped to the domm
 
 ![sockshopinsecure](./images/10_sockshopinsecure.png)
 
-The application's frontend is good to go and successfully mapped to our domain name but you'd also note that the connection is not secure.
-
-![notsecureapp](./images/012notsecure.png)
-
 **STEP 7**
+
+We'd now deploy our monitoring and logging tools (Prometheus and Grafana) for our sockshop application. In order to successfuly do this, we'd use *helm* to add the repo with the command `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts` to add the prometheus chart for our use.
+
+Once the repo has been added successfuly, we'd then search the repo using the command `helm search repo prometheus` to search.
+
+![prometheuschart](./images/014prometheus.png)
+
+From the image above, we can see that a lot of charts are present in the repo we searched but we need just the one specific for prometheus and grafana. Using the command `helm install prome prometheus-community/kube-prometheus-stack -n sock-shop`
+
+Our desired chart will be installed successfully.
+
+![prometheusinstallation](./images/016sockshopprometheus.png)
+
+After installation, run the command `kubectl get pods,svc -n sock-shop` to view the pods and services in the sockshop namespace because the installation of prometheus chart was done in the namespace.
+
+![prometheusservices](./images/017promsockshopsvc.png)
+
+To view just the exact pods for our namespace `kubectl get pods -n sockshop`
+
+![prometheuspods](./images/018prometheuspods.png)
+
+
+**STEP 8**
+
+The next step is to get the default username and password for the grafana dashboard so we can monitor as an administrator.
+To achieve this, we need to get the exact name of the grafana pods on our cluster as seen in the previous step then apply the command `kubectl describe pod <grafana pod name> -n sock-shop`.
+
+![grafanapod](./images/019promgrafana.png)
+
+It describes the details of the pod and shows it is up and running. In the environment variable section we notice the grafana secret section as encrypted.
+
+![promsecretname](./images/20promegrafanaencrypt.png)
+
+To decrypt the grafana admin user and admin password inorder to login to the grafana dashboard, run the following commands.  
+
+`kubectl get secret prome-grafana -n <namespace> -o jsonpath="{.data.admin-user}" | base64 --decode`
+
+`kubectl get secret prome-grafana -n <namespace> -o jsonpath="{.data.admin-password}" | base64 --decode`
+
+![adminuserdetails](./images/21prome-grafanadecrypt.png)
+
+`kubectl get secret prome-grafana -n <namespace> -o jsonpath="{.data.admin-password}" | base64 --decode`
+
+
+**STEP 9**
+
+Before logging in to the grafana dashboard once login details has been retrived. We need to add the CName records on our namecheap DNS so we can access it via our web browser.
+
+![namecheapgrafana](./images/021.1namecheapgraf.png)
+
+Once that's done we'd then move to access our grafana dashboard to monitor our deployed application.
+
+Grafana login via *grafana.wisdomgoddy.me* domain name
+
+![admispassworddetails](./images/022grafanalogin.png)
+
+Grafana dashboard
+![grafanadashboard](./images/023grafanadash.png)
+
+We'd do the same for prometheus. Accesing it via our web browser *prometheus.wisdomgoddy.me*
+
+Prometheus login
+
+![prometheus Login](./images/024prometheuslogin.png)
+
+Prometheus targets
+
+![](./images/025prometheustargets.png)
+
+
+
 
