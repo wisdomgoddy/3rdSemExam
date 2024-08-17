@@ -87,7 +87,9 @@ In this step all we need to do is view our application that's mapped to the domm
 
 ![sockshopinsecure](./images/10_sockshopinsecure.png)
 
-The application's frontend is good to go and successfully mapped to our domain name but you'd also note that the connection is insecure.
+The application's frontend is good to go and successfully mapped to our domain name but you'd also note that the connection is not secure.
+
+![notsecureapp](./images/012notsecure.png)
 
 **STEP 7**
 
